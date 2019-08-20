@@ -1,0 +1,49 @@
+.container{
+    padding: 10px;
+}
+
+form {
+   background-color: #F2F3F4;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.floatInput{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.seccionPoliza{
+    padding: 10px;
+}
+
+.SpanPlan{
+    margin-left: 40px;
+    font-size: 25px;
+    float: right;
+    font-weight: bolder;
+    color: red;
+}
+
+.search{
+    background-color: #1b65b9 !important;
+}
+.search:hover{
+    background-color: black !important;
+}
+
+.logoBSE{
+    width: 30%;
+    margin: 30px;
+}
+
+#map{
+    width: 200px;
+}
+
+.mapouter{
+    padding: 8px;
+    margin: 0 auto;
+    margin-top: 10px;
+    box-sizing: content-box;
+}

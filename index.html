@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-reboot.min.css">
+    <title>CARUP UI</title>
+</head>
+
+<body>
+    <div class="container col-10">
+        <div class="row-12 text-center">
+            <img class="img-fluid center-block logoBSE"
+                src="https://upload.wikimedia.org/wikipedia/commons/3/3d/BSE.svg" alt="logo BSE">
+        </div>
+        <form id="divDatosUsuario" class="form-group row" action="#">
+            <label for="txtMatricula" class="col-sm-2 col-form-label floatInput">Matrícula:</label>
+            <div class="col-sm-10 floatInput">
+                <input id="txtMatricula" type="text" placeholder="ingrese la matrícula..." class="form-control">
+            </div>
+            <label for="txtMotor" class="col-sm-2 col-form-label floatInput">Chasis:</label>
+            <div class="col-sm-10 floatInput">
+                <input id="txtMotor" type="text" placeholder="ingrese el chasis..." class="form-control">
+            </div>
+            <label for="txtChasis" class="col-sm-2 col-form-label floatInput">Motor:</label>
+            <div class="col-sm-10 floatInput">
+                <input id="txtChasis" type="text" placeholder="ingrese el motor..." class="form-control">
+            </div>
+            <div class="col text-center">
+                <button value="Buscar" class="btn btn-primary col-2 search" onclick="Busqueda()"><i
+                        class="fas fa-search"></i>
+                    Buscar</button>
+            </div>
+        </form>
+        <div id="formsServicio">
+            <h5>Datos del socio(espliegue de la web service)</h5>
+            <form id="divDatosWebService" class="form-group row">
+                <label for="txtNombre" class="col-sm-2 col-form-label floatInput">Nombre</label>
+                <div class="col-sm-10 floatInput">
+                    <input id="txtNombre" type="text" placeholder="nombre" class="form-control">
+                </div>
+                <label for="txtApellido" class="col-sm-2 col-form-label floatInput">Apellido</label>
+                <div class="col-sm-10 floatInput">
+                    <input id="txtApellido" type="text" placeholder="apellido" class="form-control">
+                </div>
+                <label for="txtTelefono" class="col-sm-2 col-form-label floatInput">Teléfono:</label>
+                <div class="col-sm-10 floatInput">
+                    <input id="txtTelefono" type="text" placeholder="telefono" class="form-control">
+                </div>
+                <div class="seccionPoliza col-12">
+                    <label> Póliza: {numPoliza}</label>
+                </div>
+                <label for="txtDireccion" class="col-sm-2 col-form-label floatInput">Dirección:</label>
+                <div class="col-sm-10 floatInput">
+                    <input id="txtDireccion" type="text" placeholder="Av italia 5045" class="form-control">
+                </div>
+                <label for="lbDepartamento" class="col-sm-2 col-form-label floatInput">Departamento:</label>
+                <div class="col-sm-4 floatInput">
+                    <select class="form-control" id="lbDepartamento">
+                        <option value="" default>Seleccione...</option>
+                        <option value="1">MONTEVIDEO</option>
+                        <option value="2">ARTIGAS</option>
+                        <option value="3">CANELONES</option>
+                        <option value="4">CERRO LARGO</option>
+                        <option value="5">COLONIA</option>
+                        <option value="6">DURAZNO</option>
+                        <option value="7">FLORES</option>
+                        <option value="8">FLORIDA</option>
+                        <option value="9">LAVALLEJA</option>
+                        <option value="10">MALDONADO</option>
+                        <option value="11">PAYSANDU</option>
+                        <option value="12">RIO NEGRO</option>
+                        <option value="13">RIVERA</option>
+                        <option value="14">ROCHA</option>
+                        <option value="15">SALTO</option>
+                        <option value="16">SAN JOSE</option>
+                        <option value="17">SORIANO</option>
+                        <option value="18">TACUAREMBO</option>
+                        <option value="19">TREINTA Y TRES</option>
+                    </select>
+                </div>
+                <label for="txtLocalidad" class="col-sm-2 col-form-label floatInput">Localidad:</label>
+                <div class="col-sm-4 floatInput">
+                    <input id="txtLocalidad" type="text" placeholder="localidad" class="form-control">
+                </div>
+
+                <label for="txtMail" class="col-sm-2 col-form-label floatInput">Email:</label>
+                <div class="col-sm-10 floatInput">
+                    <input id="txtMail" type="text" placeholder="mail@bse.com.uy" class="form-control">
+                </div>
+                <div class="SpanPlan"> BSE PLAN GLOBAL</div>
+            </form>
+            <hr>
+
+            <h5>Datos del vehículo</h5>
+            <form id="divDatosVehiculo" class="form-group row">
+                <label for="txtMatricula" class="col-sm-2 col-form-label floatInput">Matrícula:</label>
+                <div class="col-sm-4 floatInput">
+                    <input id="txtMatricula" type="text" placeholder="SMI1234" class="form-control">
+                </div>
+                <label for="txtMarca" class="col-sm-2 col-form-label floatInput">Marca:</label>
+                <div class="col-sm-4 floatInput">
+                    <input id="txtMarca" type="text" placeholder="GREAT WALL" class="form-control">
+                </div>
+                <label for="txtModelo" class="col-sm-2 col-form-label floatInput">Modelo:</label>
+                <div class="col-sm-4 floatInput">
+                    <input id="txtModelo" type="text" placeholder="WINGLE" class="form-control">
+                </div>
+                <label for="txtColor" class="col-sm-2 col-form-label floatInput">Color:</label>
+                <div class="col-sm-4 floatInput">
+                    <input id="txtColor" type="text" placeholder="BLANCO" class="form-control">
+                    <br>
+                </div>
+                <div class="form-check  col-sm-4">
+                    <label class="form-check-label col-sm-4">
+                        <input type="radio" class="form-check-input" name="optradio">Auto/Camioneta
+                    </label>
+                </div>
+                <div class="form-check col-sm-4">
+                    <label class="form-check-label col-sm-4">
+                        <input type="radio" class="form-check-input" name="optradio">Minibus
+                    </label>
+                </div>
+                <div class="form-check col-sm-4">
+                    <label class="form-check-label col-sm-4">
+                        <input type="radio" class="form-check-input" name="optradio">Moto
+                    </label>
+                </div>
+            </form>
+            <hr>
+            <h5>Datos del solicitante</h5>
+            <form id="divDatosSolicitante" class="form-group row">
+                <label for="txtNomPila" class="col-sm-3 col-form-label floatInput">Nombre de pila:</label>
+                <div class="col-sm-9 floatInput">
+                    <input id="txtNomPila" type="text" placeholder="Nombre" class="form-control">
+                </div>
+                <label for="txtCelular" class="col-sm-3 col-form-label floatInput">Celular de contacto:</label>
+                <div class="col-sm-9 floatInput">
+                    <input id="txtCelular" type="text" placeholder="099000000" class="form-control">
+                </div>
+                <fieldset style="border:1px solid grey; padding: 10px; margin: 2px;">
+                    <legend>Nota:</legend>
+                    Revisar que estén los datos completos, los que falten pedirle al solicitante...
+                </fieldset>
+            </form>
+            <hr>
+            <h5>Ubicación</h5>
+            <form id="divDatosUbicacion" class="form-group row">
+                <div class="form-check  col-sm-4">
+                    <label class="form-check-label col-sm-4">
+                        <input type="radio" class="form-check-input" name="optradio">Montevideo
+                    </label>
+                </div>
+                <div class="form-check col-sm-4">
+                    <label class="form-check-label col-sm-4">
+                        <input type="radio" class="form-check-input" name="optradio">Interior
+                    </label>
+                </div>
+                <div class="form-check col-sm-4">
+                    <label class="form-check-label col-sm-4">
+                        <input type="radio" class="form-check-input" name="optradio">Exterior
+                    </label>
+                </div>
+
+                <label for="lbUbDepartamento" class="col-sm-2 col-form-label floatInput">Departamento:</label>
+                <div class="col-sm-4 floatInput">
+                    <select class="form-control" id="lbUbDepartamento">
+                        <option value="" default>Seleccione...</option>
+                        <option value="1">MONTEVIDEO</option>
+                        <option value="2">ARTIGAS</option>
+                        <option value="3">CANELONES</option>
+                        <option value="4">CERRO LARGO</option>
+                        <option value="5">COLONIA</option>
+                        <option value="6">DURAZNO</option>
+                        <option value="7">FLORES</option>
+                        <option value="8">FLORIDA</option>
+                        <option value="9">LAVALLEJA</option>
+                        <option value="10">MALDONADO</option>
+                        <option value="11">PAYSANDU</option>
+                        <option value="12">RIO NEGRO</option>
+                        <option value="13">RIVERA</option>
+                        <option value="14">ROCHA</option>
+                        <option value="15">SALTO</option>
+                        <option value="16">SAN JOSE</option>
+                        <option value="17">SORIANO</option>
+                        <option value="18">TACUAREMBO</option>
+                        <option value="19">TREINTA Y TRES</option>
+                    </select>
+                </div>
+                <label for="txtLocalidad" class="col-sm-2 col-form-label floatInput">Localidad:</label>
+                <div class="col-sm-4 floatInput">
+                    <input id="txtLocalidad" type="text" placeholder="localidad" class="form-control">
+                </div>
+
+                <label for="txtZona" class="col-sm-2 col-form-label floatInput">Zona:</label>
+                <div class="col-sm-4 floatInput">
+                    <input id="txtZona" type="text" placeholder="ingrese la zona..." class="form-control">
+                </div><span class="col-sm-6"></span>
+                <label for="txtCalle" class="col-sm-2 col-form-label floatInput">Calle o ruta:</label>
+                <div class="col-sm-10 floatInput">
+                    <input id="txtCalle" type="text" placeholder="Avenida Italia" class="form-control">
+                </div>
+                <label for="txtNumPuerta" class="col-sm-2 col-form-label floatInput">N°puerta/Km:</label>
+                <div class="col-sm-2 floatInput">
+                    <input id="txtNumPuerta" type="text" placeholder="5045" class="form-control">
+                </div>
+                <label for="txtEsquina" class="col-sm-2 col-form-label floatInput">Esquina:</label>
+                <div class="col-sm-6 floatInput">
+                    <input id="txtEsquina" type="text" placeholder="Alejandro gallinal" class="form-control">
+                </div>
+                <fieldset class="form-check  col-sm-3" style="border:1px solid grey; padding: 10px; margin: 2px;">
+                    <legend>Es garage?</legend>
+                    <div class="form-check  col-sm-3">
+                        <label class="form-check-label col-sm-2">
+                            <input type="radio" class="form-check-input" name="optradio">Subsuelo
+                        </label>
+                    </div>
+                    <div class="form-check col-sm-3">
+                        <label class="form-check-label col-sm-2">
+                            <input type="radio" class="form-check-input" name="optradio">Nivel
+                        </label>
+                    </div>
+                </fieldset>
+                <div class="col-sm-8">
+                    <label for="urlMaps" class="col-sm-2 col-form-label floatInput">Url Maps:</label>
+                    <div class="col-sm-12">
+                        <input id="urlMaps" style="float:left" type="text" placeholder="https://maps.com..."
+                            class="form-control col-sm-10">
+                        <button value="Buscar" class="btn btn-primary search"><i
+                                class="fas fa-search"></i></button>
+                            </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><iframe width="623" height="348" id="gmap_canvas"
+                                src="https://maps.google.com/maps?q=montevideo&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                                href="https://www.pureblack.de/beste-wordpress-themes/">pureblack.de</a></div>
+                        <style>
+                            .mapouter {
+                                position: relative;
+                                text-align: right;
+                                height: 348px;
+                                width: 623px;
+                            }
+
+                            .gmap_canvas {
+                                overflow: hidden;
+                                background: none !important;
+                                height: 348px;
+                                width: 623px;
+                            }
+                        </style>
+                    </div>
+                </div>
+            </form>
+            <hr>
+        </div>
+    </div>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="all.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
