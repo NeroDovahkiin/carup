@@ -19,7 +19,7 @@
             <img class="img-fluid center-block logoBSE"
                 src="https://upload.wikimedia.org/wikipedia/commons/3/3d/BSE.svg" alt="logo BSE">
         </div>
-        <form id="divDatosUsuario" class="form-group row" action="#">
+        <form id="divDatosUsuario" class="form-group row">
             <label for="txtMatricula" class="col-sm-2 col-form-label floatInput">Matrícula:</label>
             <div class="col-sm-10 floatInput">
                 <input id="txtMatricula" type="text" placeholder="ingrese la matrícula..." class="form-control">
@@ -232,13 +232,15 @@
                     <div class="col-sm-12">
                         <input id="urlMaps" style="float:left" type="text" placeholder="https://maps.com..."
                             class="form-control col-sm-10">
-                        <button value="Buscar" class="btn btn-primary search"><i
+                        <button value="Buscar" class="btn btn-primary"  onclick="mostrarMapa()"><i
                                 class="fas fa-search"></i></button>
                             </div>
                 </div>
-                <div class="col-sm-12">
+                <div class="col-sm-12 mapo">
                     <div class="mapouter">
-                        <div class="gmap_canvas"><iframe width="623" height="348" id="gmap_canvas"
+                            <button value="Buscar" class="btn btn-primary"  onclick="ocultarMapa()"><i
+                                class="fa fa-times"></i></button>
+                        <div class="gmap_canvas"><iframe width="623" height="340" id="gmap_canvas"
                                 src="https://maps.google.com/maps?q=montevideo&t=&z=13&ie=UTF8&iwloc=&output=embed"
                                 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
                                 href="https://www.pureblack.de/beste-wordpress-themes/">pureblack.de</a></div>
@@ -253,7 +255,7 @@
                             .gmap_canvas {
                                 overflow: hidden;
                                 background: none !important;
-                                height: 348px;
+                                height: 3zpx;
                                 width: 623px;
                             }
                         </style>
